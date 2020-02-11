@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Recyk1</string>
+
+    <string-array name="programming_languages">
+        <item>C++</item>
+        <item>C#</item>
+        <item>Java</item>
+        <item>Javascript</item>
+        <item>Kotlin</item>
+        <item>Python</item>
+        <item>Ruby</item>
+        <item>Swift</item>
+        <item>Typescript</item>
+        <item>Visualstudio</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>This is a random description by me.</item>
+        <item>This is a random description by me.</item>
+        <item>This is a random description by me.</item>
+        <item>This is a random description by me.</item>
+        <item>This is a random description by me.</item>
+        <item>This is a random description by me.</item>
+        <item>This is a random description by me.</item>
+        <item>This is a random description by me.</item>
+        <item>This is a random description by me.</item>
+        <item>This is a random description by me.</item>
+    </string-array>
+</resources>
