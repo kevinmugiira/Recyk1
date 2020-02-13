@@ -1,6 +1,7 @@
 package com.example.android.recyk1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
@@ -37,10 +39,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.mytext1.setText(data1[position]);
         holder.mytext2.setText(data2[position]);
         holder.myimage.setImageResource(images[position]);
+
+        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SecondActivity.class);
+                intent.putExtra("data1", data1[position]);
+                intent.putExtra("data2", data2[position]);
+                intent.putExtra("images", images[position]);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
@@ -54,12 +67,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         TextView mytext1, mytext2;
         ImageView myimage;
+        ConstraintLayout mainLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             mytext1 = itemView.findViewById(R.id.mytext1);
             mytext2 = itemView.findViewById(R.id.mytext2);
             myimage = itemView.findViewById(R.id.myimage);
+            mainLayout = itemView.findViewById(R.id.constraitLayout);
         }
     }
 }
